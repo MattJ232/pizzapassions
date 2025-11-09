@@ -1,72 +1,132 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Pizza Passions Sales Analysis
+### Data Analyst by Matthew Jacobs
 
-## Template Instructions
+## Table of Content 
+- [Project Overview](#project-overview)
+- [Business Requirements](#business-requirements)
+- [Objectives](#objectives)
+- [Hypotheses](#hypotheses)
+- [Dataset](#dataset-and-collection)
+- [Project Interaction](#project-interaction)
+- [How To Use This Project](#how-to-use-this-project)
+- [Methodology](#methodology)
+- [Machine Learning Approach](#machine-learning-approach)
+- [Visualisation](#visualisation)
+- [Key Findings & Insights](#key-findings--insights)
+- [Future Improvements](#future-improvements)
+- [Learning Outcomes & Reflection](#learning-outcomes--reflection)
+- [Ethical Considerations](#ethical-considerations)
+- [Technologies Used](#technologies-used)
+- [Credits](#credits)
+- [Acknowledgement](#acknowledgement)
 
-Welcome,
+## Project Overview
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+I have been recruited by a local business to perform data analysis on recent sales data with a view to providing evidence-based conclusions and plans to help move the business through a period of transition. 
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+## Business Requirements
+Pizza Passions is a small family-run business that has been steadily growing over a number of years. Recently, increases in labour, ingredients and utility costs however are starting to dramatically cut into the profitability of the business, resulting in the need to look at all aspects of the business to improve efficiency. This part of the project is to assess the last years worth of sales, to identify trends and patterns that can either be used to reduce costs, increase sales or profit margins. 
 
-## How to use this repo
+As the contracted Data Analyst, I have been given data for the last 12 months of sales, outlining the types of pizza purchased, the size, time & date of purchase and the overall sales value. I will make sure that the data is first cleaned and standardised before looking at possible hypotheses, before creating visualisations to interpret the data, and then finally, to draw conclusions as to possible steps to move forward. 
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+## Objectives
 
-1. Copy the URL of your repository to your clipboard.
+ * To clean and validate the provided data to check for consistency and value
+ * To identify key market drivers and trends from the historical data
+ * To analyse and produce projections using machine learning to look at possible future growth opportunities 
+ * To produce visual models for a range of different audiences to show findings and future plans 
+ * To provide hypotheses as to reasons for the current situation, assess how accurate they are and then provide key steps to move forward
 
-1. In VS Code, select **File** -> **Open Folder**.
+ ## Hypotheses
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+Given the nature and scale of the data, it will be impossible to provide a narrative around costs and profits, as neither is given as part of the dataset. As such, any hypotheses will have to be based on sales trends and pizza types.
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
+**Hypotheses**
+ 1. On average, more orders will be placed per day on weekends rather than weekdays, and in the evenings, rather than daytime.
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+     **Validation:**  The sales data provided gives an order time, as such I will be able to review both total orders placed, as well as the total sales for various time periods. 
 
-1. In VS Code, select **File** > **Open Folder** again.
+2. Medium pizza will be the most purchased item.
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+    **Validation:** Given the data I will be able to see what size of pizza is the most commonly purchased. Additionally, as I nice to have and time willing, I will review if these trends change at different times of day.
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+3. Orders placed during peak hours have a longer ingredients list.
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+    **Validation:** I can compare the average ingredient count during peak and off-peak hours. 
 
-1. Choose **Venv** from the dropdown list.
+4. Pineapple should not be on pizza.
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+    **Validation:** I can compare the amount of order that are placed that have pineapple as a topping on the pizza. 
 
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
 
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
+## Dataset and collection
+The data provided has 12 columns and 48,620 rows, excluding headers. 
 
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
+ * **Source**: (https://www.kaggle.com/datasets/mexwell/pizza-sales)
 
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
 
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
+## Project Interaction
 
- ```console
- pip3 install -r requirements.txt
- ```
+The goal of this project was to provide an overall narrative for possible business improvements, as well as two sets of visualisations to be completed. 
+The first, using Python, would be a technical deep dive into the data, using Seaborn, Matplotlib and Plotly to visualise the data.
+The second was to provide an interactive dashboard for casual users to be easily able draw their own insights from a range of different data points. For this task I chose to use PowerBi.
 
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
 
-1. Click the **kernel** button and choose **Python Environments**.
 
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
+## Methodology
 
-```console
-! python --version
-```
+The project will follow templates and guidelines from the training content of
 
-## Deployment Reminders
+ * **Data Collection & Preparation**: Imported the dataset, handled missing values, and cleaned data for consistency.
 
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
+ * **Exploratory Data Analysis (EDA)**: Investigated distributions of key variables and relationships between user demographics, behaviour, and engagement.
 
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+ * **Machine Learning**: Built and evaluated predictive models, including linear regression.
+
+ * **Visualisation**: Developed an interactive dashboard to present insights tailored for business and product stakeholders.
+
+
+## Machine Learning Approach
+
+### Results Summary
+
+
+## Visualisation
+
+### Power Bi Visualisations
+
+
+ * **KPIs**: 
+
+
+## Key Findings & Insights
+
+
+
+
+
+
+## Future Improvements
+
+
+
+## Learning Outcomes and Reflection
+
+
+### Personal Reflection
+
+
+## Ethical Considerations
+
+## Technologies Used
+
+### Data Analysis & Manipulation
+
+### Data Visualisation
+
+### Machine Learning & Modelling
+
+## Credits
+
+
+ ## Acknowledgement:
